@@ -1,0 +1,25 @@
+---
+
+---
+
+<button id="switch" class="text-sm">☀️</button>
+<script>
+  let htmlEl = document.querySelector('html');
+  let toggleBtn = document.querySelector('#switch');
+
+  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    localStorage.theme = 'dark';
+    htmlEl.classList.add('dark')
+  } else {
+    localStorage.removeItem('theme')
+    htmlEl.classList.remove('dark')
+  }
+
+  toggleBtn.textContent = htmlEl.classList.contains('dark') ? "☀️" : "🌙";
+  toggleBtn.addEventListener('click', () => {
+    htmlEl.classList.contains('dark') ? htmlEl.classList.remove('dark') : htmlEl.classList.add('dark');
+    toggleBtn.textContent = htmlEl.classList.contains('dark') ? "☀️" : "🌙";
+    localStorage.removeItem('theme')
+  });
+</script>

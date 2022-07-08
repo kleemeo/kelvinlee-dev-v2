@@ -1,17 +1,83 @@
 ---
-let className = "dark";
+import ThemeButton from "../components/ThemeButton.astro";
+import { Icon } from 'astro-icon'
+import '../styles/global.css'
 ---
 
-<html lang="en" class={className}>
+<html lang="en" class="dark">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Kelvin Lee</title>
+  <title>KELVIN LEE | Software Engineer</title>
+  <!-- <style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      h1 {
+        @apply text-4xl font-bold;
+      }
+
+      a {
+        @apply text-red-200 underline;
+      }
+    }
+
+    [astro-icon] {
+      @apply text-zinc-50 h-4;
+    }
+  </style> -->
 </head>
 
-<body class="dark:bg-zinc-900 bg-red-50">
-  <h1 onclick={()=> className = 'dark'} class="text-2xl">Kelvin Lee</h1>
+<body class="dark:bg-zinc-900 dark:text-zinc-50 bg-neutral-100 antialiased">
+  <main class="min-h-screen flex flex-col justify-center">
+    <section class="container max-w-screen-lg h-min mx-auto flex justify-between items-stretch">
+      <section class="container flex flex-col gap justify-between">
+        <div>
+          <h1 class="">Hey, it's Kelvin 👋🏼</h1>
+          <h2>A Frontend Engineer</h2>
+          <h2 class="underline">based in Toronto</h2>
+        </div>
+        <p>Currently at <a href="/">twg+deloitte</a></p>
+        <div class="container p-0">
+          <ul class="flex gap-1">
+            <li>
+              <a href="/">
+                <Icon name="akar-icons:github-fill"></Icon>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <Icon name="akar-icons:github-fill"></Icon>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <Icon name="akar-icons:github-fill"></Icon>
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <Icon name="akar-icons:github-fill"></Icon>
+              </a>
+            </li>
+          </ul>
+          <a href="/">Resume/CV</a>
+        </div>
+      </section>
+      <section class="container font-sans">
+        <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore
+          magna aliqua. Tincidunt vitae semper quis lectus nulla at volutpat diam. Magna sit amet purus gravida quis
+          blandit turpis cursus. </p>
+        <p>Justo eget magna fermentum iaculis eu. Pellentesque sit amet porttitor eget dolor morbi non arcu. Nunc id
+          cursus metus aliquam eleifend mi in. Venenatis tellus in metus vulputate eu. Amet est placerat in egestas.
+          Arcu non sodales neque sodales ut etiam sit amet.</p>
+      </section>
+    </section>
+  </main>
 </body>
 
 </html>
