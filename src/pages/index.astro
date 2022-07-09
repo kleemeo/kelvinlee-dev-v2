@@ -1,9 +1,8 @@
 ---
 import ThemeButton from "../components/ThemeButton.astro";
-import { Icon } from 'astro-icon'
-import '../styles/global.css'
 import { Content as Bio } from '../content/Bio.md'
 import MainLayout from "../layouts/MainLayout.astro";
+import SocialBar from "../components/SocialBar.astro";
 ---
 
 <MainLayout>
@@ -15,30 +14,9 @@ import MainLayout from "../layouts/MainLayout.astro";
           <h2>A Frontend Engineer</h2>
           <h2 class="underline">based in Toronto</h2>
         </div>
-        <p>Currently at <a href="/">twg+deloitte</a></p>
+        <p>Currently at <a href="https://twg.io/">TWG + Deloitte</a></p>
         <div class="container p-0">
-          <ul class="flex gap-1">
-            <li>
-              <a href="/">
-                <Icon name="akar-icons:github-fill"></Icon>
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <Icon name="akar-icons:github-fill"></Icon>
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <Icon name="akar-icons:github-fill"></Icon>
-              </a>
-            </li>
-            <li>
-              <a href="/">
-                <Icon name="akar-icons:github-fill"></Icon>
-              </a>
-            </li>
-          </ul>
+          <SocialBar />
           <a href="/resume">Resume/CV</a>
           <ThemeButton />
         </div>
