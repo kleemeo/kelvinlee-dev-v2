@@ -10,10 +10,22 @@
     @apply text-3xl;
   }
   a {
-    @apply text-red-200 underline;
+    @apply text-red-700 underline dark:text-red-200 dark:hover:text-red-50;
   }
 }
 
 [astro-icon] {
-  @apply text-zinc-50 h-4;
+  @apply dark:text-zinc-50 h-4;
+}
+
+.react {
+  @apply text-blue-600;
+}
+
+.wrapper {
+  @apply min-h-screen flex flex-col justify-center;
+}
+
+pre {
+  @apply p-4 rounded-lg;
 }
