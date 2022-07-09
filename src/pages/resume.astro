@@ -1,0 +1,16 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+const email = import.meta.env.PUBLIC_EMAIL;
+---
+
+<MainLayout>
+  <div class="wrapper flex flex-col">
+    <a class="text-center font-bold" href="/">
+      👈🏼 Go Back </a>
+    <p class="mx-auto text-center max-w-lg">Currently, only providing my resume by request.
+    </p>
+    <p class="mx-auto text-center max-w-lg">
+      Shoot me an email at <a href={`mailto:${email}?subject=Resume Request`} target="_blank">{email}</a>
+    </p>
+  </div>
+</MainLayout>

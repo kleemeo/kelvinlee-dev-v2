@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon'
+
+// My Social Links
+const Github = 'https://github.com/kleemeo'
+const LinkedIn = 'https://www.linkedin.com/in/kleeio/'
+const Twitter = 'https://twitter.com/klee_io'
+const Email = import.meta.env.PUBLIC_EMAIL
+
+// Icon names from https://icon-sets.iconify.design/
+const SocialLinks = [
+  {
+    name: 'Github',
+    icon: 'akar-icons:github-fill',
+    url: Github,
+  },
+  {
+    name: 'LinkedIn',
+    icon: 'akar-icons:linkedin-fill',
+    url: LinkedIn,
+  },
+  {
+    name: 'Twitter',
+    icon: 'akar-icons:twitter-fill',
+    url: Twitter,
+  },
+  {
+    name: 'Email',
+    icon: 'bi:envelope-fill',
+    url: `mailto:${Email}`,
+  },
+]
+
+---
+
+<ul class="flex gap-2.5">
+  {SocialLinks.map(({ name, icon, url }) => (
+  <li id={name}>
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <Icon aria-hidden="true" name={icon} class="social" />
+      <span class="sr-only">{name}</span>
+    </a>
+  </li>
+  ))}
+</ul>
