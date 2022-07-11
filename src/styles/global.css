@@ -4,14 +4,21 @@
 
 @layer base {
   h1 {
-    @apply text-4xl font-bold;
+    @apply text-4xl sm:text-4xl font-bold;
   }
   h2 {
-    @apply text-3xl;
+    @apply text-xl sm:text-3xl;
   }
   a {
-    @apply text-red-700 underline dark:text-red-200 dark:hover:text-red-50;
+    @apply text-red-700 dark:text-red-200 font-semibold;
+    box-shadow: inset 0 0 0 0;
+    transition: color 200ms ease-in-out, box-shadow 200ms ease-in-out;
   }
+}
+
+a:hover {
+  @apply dark:text-neutral-800;
+  box-shadow: inset 150px 0 0 0 #fca5a5;
 }
 
 [astro-icon] {
@@ -19,7 +26,7 @@
 }
 
 [astro-icon].social {
-  @apply transition ease-in duration-100 hover:-translate-y-1 hover:scale-110;
+  @apply transition ease-in duration-100 hover:-translate-y-1 hover:scale-110 hover:text-red-200;
 }
 
 .react {
