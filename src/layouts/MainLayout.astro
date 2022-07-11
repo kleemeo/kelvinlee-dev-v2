@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+
+const { showFooter } = Astro.props;
 ---
 
 <html lang="en" class="dark">
@@ -14,13 +16,15 @@ import '../styles/global.css'
   <!-- INNER CONTENT -->
   <slot />
   <!-- END -->
-
+  {
+  showFooter &&
   <footer class="w-screen text-center font-mono absolute sm:bottom-0 text-xs py-1 px-4">
     <p class="text-neutral-500">website designed and built by me with <a href="https://astro.build/"
         target="_blank">astro</a> + <a href="https://tailwindcss.com/" target="_blank">tailwind</a> at this
       <a href="/">repo</a>
     </p>
   </footer>
+  }
 </body>
 
 </html>
