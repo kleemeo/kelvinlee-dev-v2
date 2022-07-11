@@ -1,6 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-const email = import.meta.env.PUBLIC_EMAIL;
+import { email } from '../content/data'
+
+const Email = email
 ---
 
 <MainLayout>
