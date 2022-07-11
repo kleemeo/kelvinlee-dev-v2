@@ -4,8 +4,8 @@ const email = import.meta.env.PUBLIC_EMAIL;
 ---
 
 <MainLayout>
-  <div class="wrapper container flex flex-col">
-    <a class="text-center font-bold" href="/">
+  <div class="wrapper container flex flex-col justify-center items-center">
+    <a class="text-center font-bold w-max" href="/">
       👈🏼 Go Back </a>
     <p class="mx-auto text-center max-w-lg">Currently, only providing my resume by request.
     </p>
@@ -13,4 +13,17 @@ const email = import.meta.env.PUBLIC_EMAIL;
       Shoot me an email at <a href={`mailto:${email}?subject=Resume Request`} target="_blank">{email}</a>
     </p>
   </div>
+  <script is:inline>
+    let htmlEl = document.querySelector('html');
+    let toggleBtn = document.querySelector('#switch');
+
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      localStorage.setItem('theme', 'dark');
+      htmlEl.classList.add('dark')
+    } else {
+      localStorage.setItem('theme', 'light');
+      htmlEl.classList.remove('dark')
+    }
+  </script>
 </MainLayout>
