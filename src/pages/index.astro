@@ -7,14 +7,15 @@ import SocialBar from "../components/SocialBar.astro";
 
 <MainLayout>
   <main class="wrapper">
-    <section class="container max-w-screen-lg h-min mx-auto flex justify-between items-stretch">
-      <section class="container flex flex-col gap justify-between">
+    <section
+      class="container p-0 max-w-screen-lg h-min mx-auto flex flex-col sm:flex-row justify-between items-stretch gap-4">
+      <section class="container flex flex-col gap-4 sm:gap justify-between">
         <div>
           <h1 class="">Hey, it's Kelvin 👋🏼</h1>
-          <h2>A Frontend Engineer</h2>
+          <h2>Frontend Engineer</h2>
           <h2 class="underline">based in Toronto</h2>
         </div>
-        <p>Currently at <a href="https://twg.io/">TWG + Deloitte</a></p>
+        <p>Currently at <a href="https://twg.io/" target="_blank">TWG + Deloitte</a></p>
         <div class="container p-0">
           <SocialBar />
           <a href="/resume">Resume/CV</a>
