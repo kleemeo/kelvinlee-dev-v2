@@ -5,7 +5,7 @@ Version 2 of my personal website. This project allowed me to try out some new to
 ### 🔨 Tools used
 
 - [Astro](https://astro.build): bundles static assets with dynamic, configurable hydration options. This site is all static at the moment, almost no JS. The development experience is very FAST, really enjoyed the process. Will definitely use this more in the future.
-- [TailwindCSS](https://tailwindcss.com/): A utility-first CSS framework for styled-components.
+- [TailwindCSS](https://tailwindcss.com/)
 
 ### 🚀 Running Astro Locally
 
