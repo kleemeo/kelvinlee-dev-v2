@@ -1,25 +1,42 @@
 ---
-
+import { Icon } from 'astro-icon'
 ---
 
-<button id="switch" class="text-sm">☀️</button>
-<script>
+<button id="switch"
+  class="absolute left-[1rem] top-[1rem] text-lg p-1 border rounded-lg border-zinc-900 dark:border-neutral-100 hover:scale-110 transition">
+</button>
+<script is:inline>
+  const SUN_SVG = `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em"
+    preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+    <path fill="currentColor" fill-rule="evenodd"
+      d="M10 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm4 8a4 4 0 1 1-8 0a4 4 0 0 1 8 0Zm-.464 4.95l.707.707a1 1 0 0 0 1.414-1.414l-.707-.707a1 1 0 0 0-1.414 1.414Zm2.12-10.607a1 1 0 0 1 0 1.414l-.706.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0ZM17 11a1 1 0 1 0 0-2h-1a1 1 0 1 0 0 2h1Zm-7 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1ZM5.05 6.464A1 1 0 1 0 6.465 5.05l-.708-.707a1 1 0 0 0-1.414 1.414l.707.707Zm1.414 8.486l-.707.707a1 1 0 0 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 1.414ZM4 11a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2h1Z"
+      clip-rule="evenodd" />
+  </svg>`
+  const MOON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="currentColor" d="M29.2 26.72a12.07 12.07 0 0 1-6.3-22.28A13.68 13.68 0 0 0 19.49 4a14 14 0 0 0 0 28a13.82 13.82 0 0 0 10.9-5.34a11.71 11.71 0 0 1-1.19.06Z" class="clr-i-solid clr-i-solid-path-1"/><path fill="none" d="M0 0h36v36H0z"/></svg>`
+
   let htmlEl = document.querySelector('html');
   let toggleBtn = document.querySelector('#switch');
 
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    localStorage.theme = 'dark';
+    localStorage.setItem('theme', 'dark');
     htmlEl.classList.add('dark')
   } else {
-    localStorage.removeItem('theme')
+    localStorage.setItem('theme', 'light');
     htmlEl.classList.remove('dark')
   }
 
-  toggleBtn.textContent = htmlEl.classList.contains('dark') ? "☀️" : "🌙";
+  toggleBtn.innerHTML = htmlEl.classList.contains('dark') ? SUN_SVG : MOON_SVG;
+
   toggleBtn.addEventListener('click', () => {
-    htmlEl.classList.contains('dark') ? htmlEl.classList.remove('dark') : htmlEl.classList.add('dark');
-    toggleBtn.textContent = htmlEl.classList.contains('dark') ? "☀️" : "🌙";
-    localStorage.removeItem('theme')
+    if (localStorage.theme !== 'dark') {
+      localStorage.setItem('theme', 'dark');
+      htmlEl.classList.add('dark')
+      toggleBtn.innerHTML = SUN_SVG;
+    } else {
+      localStorage.setItem('theme', 'light');
+      htmlEl.classList.remove('dark')
+      toggleBtn.innerHTML = MOON_SVG;
+    }
   });
 </script>
