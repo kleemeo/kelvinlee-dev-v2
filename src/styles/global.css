@@ -16,9 +16,11 @@
   }
 }
 
-a:hover {
-  @apply dark:text-neutral-800 text-neutral-800;
-  box-shadow: inset 150px 0 0 0 #fca5a5;
+@media (min-width: 768px) {
+  a:hover {
+    @apply dark:text-neutral-800 text-neutral-800;
+    box-shadow: inset 150px 0 0 0 #fca5a5;
+  }
 }
 
 [astro-icon] {
@@ -26,7 +28,7 @@ a:hover {
 }
 
 [astro-icon].social {
-  @apply transition ease-in duration-100 hover:-translate-y-1 hover:scale-110 dark:hover:text-red-500;
+  @apply transition ease-in duration-100 sm:hover:-translate-y-1 sm:hover:scale-110 sm:dark:hover:text-red-200;
 }
 
 .react {
