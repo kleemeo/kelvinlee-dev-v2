@@ -1,6 +1,6 @@
 # kelvinlee.dev V2
 
-Version 2 of my personal website. This project allowed me to try out some new tools and explore with some more design.
+Version 2 of my personal website. This project allowed me to try out some new tools and explore with some more design. This repo is connected to Netlify for automated deployment.
 
 ### 🔨 Tools used
 
