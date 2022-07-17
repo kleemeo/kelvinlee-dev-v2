@@ -29,13 +29,13 @@ import SocialBar from "../components/SocialBar.astro";
   <script>
     let i = 0;
     const sbEl = document.getElementById('subheading');
-    const phrases = ['Based in Toronto 🇨🇦 + remote 🌎', 'Originally from Taiwan 🇹🇼', 'Enjoying ⚽️ 🏔 🏂'];
+    const phrases = ['Based in Toronto 🇨🇦 + Remote 🌎', 'Originally from Taiwan 🇹🇼', '⚽️ 🏔 🏂'];
     sbEl.textContent = phrases[i];
     const update = () => {
-      sbEl.classList.add('translate-y-0', 'opacity-100');
+      sbEl.classList.add('translate-y-1', 'opacity-100');
       sbEl.textContent = phrases[i];
       setTimeout(() => {
-        sbEl.classList.remove('opacity-100', 'translate-y-0');
+        sbEl.classList.remove('opacity-100', 'translate-y-1');
         sbEl.classList.add('opacity-0')
       }, 4000)
       i === phrases.length - 1 ? i = 0 : i++;
