@@ -8,7 +8,7 @@ import SocialBar from "../components/SocialBar.astro";
 <MainLayout showFooter={true}>
   <main class="wrapper">
     <section
-      class="container p-0 max-w-screen-lg h-min mx-auto flex flex-col sm:flex-row justify-between items-stretch gap-4">
+      class="container p-0 px-10 max-w-screen-lg h-min mx-auto flex flex-col sm:flex-row justify-between items-stretch gap-4">
       <section class="container flex flex-col gap-4 sm:gap justify-between">
         <div class="">
           <ThemeButton client:idle />
@@ -17,7 +17,6 @@ import SocialBar from "../components/SocialBar.astro";
           <h3 id="subheading" class="text-lg w-max transition-all opacity-0"></h3>
         </div>
         <div class="container p-0 flex flex-col gap-2 mt-5">
-          <p>Currently at <a href="https://twg.io/" target="_blank">TWG + Deloitte</a></p>
           <SocialBar />
           <a class="w-max" href="/resume">Resume/CV</a>
         </div>
@@ -29,14 +28,10 @@ import SocialBar from "../components/SocialBar.astro";
   </main>
   <script>
     let i = 0;
-    let first = false;
     const sbEl = document.getElementById('subheading');
-    const hbEl = document.getElementById('headingBox');
     const phrases = ['Based in Toronto 🇨🇦 + remote 🌎', 'Originally from Taiwan 🇹🇼', 'Enjoying ⚽️ 🏔 🏂'];
     sbEl.textContent = phrases[i];
-
     const update = () => {
-      const bgColor = 'bg-gray-500'
       sbEl.classList.add('translate-y-0', 'opacity-100');
       sbEl.textContent = phrases[i];
       setTimeout(() => {
@@ -45,7 +40,6 @@ import SocialBar from "../components/SocialBar.astro";
       }, 4000)
       i === phrases.length - 1 ? i = 0 : i++;
     }
-
     update();
     setInterval(() => {
       update()

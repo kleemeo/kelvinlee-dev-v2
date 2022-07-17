@@ -32,7 +32,7 @@
 }
 
 .react {
-  @apply font-bold text-blue-300;
+  @apply font-bold text-blue-700 dark:text-blue-300;
 }
 
 .hashtag {

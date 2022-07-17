@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "check": "astro check"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^0.2.2",
@@ -23,6 +24,7 @@
   "dependencies": {
     "@fontsource/dm-sans": "^4.5.7",
     "@fontsource/dm-serif-display": "^4.5.7",
-    "astro-icon": "^0.7.1"
+    "astro-icon": "^0.7.1",
+    "cssnano": "^5.1.12"
   }
 }

@@ -1,15 +1,18 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
+import '../components/MainHead.astro'
+import MainHead from '../components/MainHead.astro';
 
 const { showFooter } = Astro.props;
+const { canonicalURL } = Astro
 ---
 
 <html lang="en" class="dark">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Kelvin Lee | Frontend Engineer</title>
+  <MainHead title="Kelvin Lee | Frontend Engineer"
+    description="Kelvin Lee is a frontend software engineer based in Toronto, Canada and remote. This is his personal minimal website. Designed and built with Astro and Tailwind CSS. Repository on GitHub."
+    image="/seo/og-image.jpeg" canonicalURL={canonicalURL} />
 </head>
 
 <body class="relative dark:bg-zinc-900 dark:text-zinc-50 bg-neutral-100 antialiased transition-colors duration-300">
