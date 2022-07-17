@@ -6,4 +6,4 @@ Currently helping a large enterprise upgrade their legacy software to a modern t
 
 Frontend development with <span class="react">React + Typescript</span> is my specialty. I aim to build beautiful and performant web experiences.
 
-Away from the screen 💻 I love the outdoors and staying active but currently recovering from a torn achilles 🩼
+Away from the screen, I love the outdoors and staying active but currently recovering from a torn achilles 🩼
