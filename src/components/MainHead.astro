@@ -40,4 +40,4 @@ const { title, description, image, next, prev, canonicalURL } = Astro.props as P
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 {image &&
-<meta name="twitter:image" content={image} />}
+<meta name="twitter:image" content={new URL(image, canonicalURL)} />}
