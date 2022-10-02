@@ -1,33 +1,29 @@
 ---
 import '../styles/global.css';
-import '../components/MainHead.astro'
+import '../components/MainHead.astro';
 import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
 
 const { showFooter } = Astro.props;
-const { canonicalURL } = Astro
+const { canonicalURL } = Astro;
 ---
 
-<html lang="en" class="dark">
+<html lang='en' class='dark'>
+  <head>
+    <MainHead
+      title='Kelvin Lee | Frontend Engineer'
+      description='Kelvin Lee is a frontend software engineer based in Toronto, Canada and remote. This is his personal minimal website. Designed and built with Astro and Tailwind CSS. Repository on GitHub.'
+      image='/seo/og-image.jpeg'
+      canonicalURL={canonicalURL}
+    />
+  </head>
 
-<head>
-  <MainHead title="Kelvin Lee | Frontend Engineer"
-    description="Kelvin Lee is a frontend software engineer based in Toronto, Canada and remote. This is his personal minimal website. Designed and built with Astro and Tailwind CSS. Repository on GitHub."
-    image="/seo/og-image.jpeg" canonicalURL={canonicalURL} />
-</head>
-
-<body class="relative dark:bg-zinc-900 dark:text-zinc-50 bg-neutral-100 antialiased transition-colors duration-300">
-  <!-- INNER CONTENT -->
-  <slot />
-  <!-- END -->
-  {
-  showFooter &&
-  <footer class="w-screen text-center font-mono absolute sm:bottom-0 text-xs py-1 px-4">
-    <p class="text-neutral-500">website designed and built by me with <a href="https://astro.build/"
-        target="_blank">astro</a> + <a href="https://tailwindcss.com/" target="_blank">tailwind</a> at this
-      <a href="/">repo</a>
-    </p>
-  </footer>
-  }
-</body>
-
+  <body
+    class='relative dark:bg-zinc-900 dark:text-zinc-50 bg-neutral-100 antialiased transition-colors duration-300'
+  >
+    <!-- INNER CONTENT -->
+    <slot></slot>
+    <!-- END -->
+    {showFooter && <Footer />}
+  </body>
 </html>
