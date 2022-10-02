@@ -10,6 +10,7 @@
     "check": "astro check"
   },
   "devDependencies": {
+    "@astrojs/mdx": "^0.11.3",
     "@astrojs/tailwind": "^0.2.2",
     "@typescript-eslint/parser": "^5.30.4",
     "astro": "^1.0.0-beta.63",

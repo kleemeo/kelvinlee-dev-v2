@@ -1,13 +1,22 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://kelvinlee.dev/',
-  vite: { ssr: { external: ['svgo'] } },
+  vite: {
+    ssr: {
+      external: ['svgo'],
+    },
+  },
   integrations: [
     tailwind({
-      config: { applyBaseStyles: false },
+      config: {
+        applyBaseStyles: false,
+      },
     }),
+    mdx(),
   ],
 });
