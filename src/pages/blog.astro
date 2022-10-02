@@ -1,0 +1,23 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ThemeButton from '../components/ThemeButton.astro';
+import NavBar from '../components/NavBar.astro';
+
+const posts = await Astro.glob('./blog/*.mdx');
+---
+
+<MainLayout showFooter={true}>
+  <main class='min-h-screen flex flex-col'>
+    <NavBar />
+    <section class='py-4 px-2 sm:px-10 max-w-screen-lg container'>
+      <ul>
+        {posts.map((post) => (
+          <li>
+            <span class='text-xs'>{post.frontmatter.pubDate}</span>
+            <a href={post.url}>{post.title}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</MainLayout>

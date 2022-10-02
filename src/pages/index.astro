@@ -1,27 +1,30 @@
 ---
-import ThemeButton from "../components/ThemeButton.astro";
-import { Content as Bio } from '../content/Bio.md'
-import MainLayout from "../layouts/MainLayout.astro";
-import SocialBar from "../components/SocialBar.astro";
+import ThemeButton from '../components/ThemeButton.astro';
+import { Content as Bio } from '../content/Bio.md';
+import MainLayout from '../layouts/MainLayout.astro';
+import SocialBar from '../components/SocialBar.astro';
+import NavBar from '../components/NavBar.astro';
 ---
 
 <MainLayout showFooter={true}>
-  <main class="wrapper">
+  <NavBar />
+  <main class='wrapper mt-[-60px]'>
     <section
-      class="container p-0 sm:px-10 max-w-screen-lg h-min mx-auto flex flex-col sm:flex-row justify-between items-stretch gap-4">
-      <section class="container flex flex-col gap-4 sm:gap justify-between">
-        <div class="">
-          <ThemeButton client:idle />
-          <h1 class="tracking-tight">Hey, it's Kelvin 👋🏼</h1>
-          <h2 id="headingBox" class="">Frontend Engineer</h2>
-          <h3 id="subheading" class="text-lg w-max transition-all opacity-0"></h3>
+      class='container p-0 sm:px-10 max-w-screen-lg h-min mx-auto flex flex-col sm:flex-row justify-between items-stretch gap-4'
+    >
+      <section class='container flex flex-col gap-4 sm:gap justify-between'>
+        <div class=''>
+          <h1 class='tracking-tight'>Hey, it's Kelvin 👋🏼</h1>
+          <h2 id='headingBox' class=''>Frontend Engineer</h2>
+          <h3 id='subheading' class='text-lg w-max transition-all opacity-0'>
+          </h3>
         </div>
-        <div class="container p-0 flex flex-col gap-2 mt-5">
+        <div class='container p-0 flex flex-col gap-2 mt-5'>
           <SocialBar />
-          <a class="w-max" href="/resume">Resume/CV</a>
+          <a class='w-max highlight' href='/resume'>Resume/CV</a>
         </div>
       </section>
-      <section class="container font-sans flex flex-col gap-4 justify-between">
+      <section class='container font-sans flex flex-col gap-4 justify-between'>
         <Bio />
       </section>
     </section>
@@ -29,22 +32,24 @@ import SocialBar from "../components/SocialBar.astro";
   <script>
     let i = 0;
     const sbEl = document.getElementById('subheading');
-    const phrases = ['Based in Toronto 🇨🇦 + Remote 🌎', 'Originally from Taiwan 🇹🇼', '⚽️ 🏔 🏂'];
+    const phrases = [
+      'Based in Toronto 🇨🇦 + Remote 🌎',
+      'Originally from Taiwan 🇹🇼',
+      '⚽️ 🏔 🏂',
+    ];
     sbEl.textContent = phrases[i];
     const update = () => {
       sbEl.classList.add('translate-y-1', 'opacity-100');
       sbEl.textContent = phrases[i];
       setTimeout(() => {
         sbEl.classList.remove('opacity-100', 'translate-y-1');
-        sbEl.classList.add('opacity-0')
-      }, 4000)
-      i === phrases.length - 1 ? i = 0 : i++;
-    }
+        sbEl.classList.add('opacity-0');
+      }, 4000);
+      i === phrases.length - 1 ? (i = 0) : i++;
+    };
     update();
     setInterval(() => {
-      update()
+      update();
     }, 5000);
-
-
   </script>
 </MainLayout>
