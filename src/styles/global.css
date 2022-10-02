@@ -18,6 +18,9 @@
 
 @media (min-width: 768px) {
   a:hover {
+    @apply underline;
+  }
+  a.highlight:hover {
     @apply dark:text-neutral-800 text-neutral-800;
     box-shadow: inset 150px 0 0 0 #fca5a5;
   }
