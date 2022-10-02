@@ -9,6 +9,9 @@
   h2 {
     @apply text-xl sm:text-3xl;
   }
+  p {
+    @apply mb-4;
+  }
   a {
     @apply text-red-800 dark:text-red-200 font-semibold;
     box-shadow: inset 0 0 0 0;
