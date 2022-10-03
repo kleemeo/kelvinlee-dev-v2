@@ -30,7 +30,7 @@
 }
 
 [astro-icon] {
-  @apply dark:text-zinc-50 h-5;
+  @apply dark:text-zinc-50 sm:h-5 h-10;
 }
 
 [astro-icon].social {

@@ -1,12 +1,12 @@
 ---
-import { Icon } from 'astro-icon'
-import { email } from '../content/data'
+import { Icon } from 'astro-icon';
+import { email } from '../content/data';
 
 // My Social Links
-const Github = 'https://github.com/kleemeo'
-const LinkedIn = 'https://www.linkedin.com/in/kleeio/'
-const Twitter = 'https://twitter.com/klee_io'
-const Email = email
+const Github = 'https://github.com/kleemeo';
+const LinkedIn = 'https://www.linkedin.com/in/kleeio/';
+const Twitter = 'https://twitter.com/klee_io';
+const Email = email;
 
 // Icon names from https://icon-sets.iconify.design/
 const SocialLinks = [
@@ -30,17 +30,16 @@ const SocialLinks = [
     icon: 'bi:envelope-fill',
     url: `mailto:${Email}`,
   },
-]
-
+];
 ---
 
-<ul class="flex gap-3">
+<ul class='flex justify-center sm:justify-start gap-8 sm:gap-3'>
   {SocialLinks.map(({ name, icon, url }) => (
-  <li id={name}>
-    <a href={url} target="_blank" rel="noopener noreferrer">
-      <Icon aria-hidden="true" name={icon} class="social" />
-      <span class="sr-only">{name}</span>
-    </a>
-  </li>
+    <li id={name}>
+      <a href={url} target='_blank' rel='noopener noreferrer'>
+        <Icon aria-hidden='true' name={icon} class='social' />
+        <span class='sr-only'>{name}</span>
+      </a>
+    </li>
   ))}
 </ul>
