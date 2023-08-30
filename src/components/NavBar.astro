@@ -8,16 +8,14 @@ const links = [
 ---
 
 <header class='py-4 px-[1rem] sm:px-10 max-w-screen-lg container w-screen'>
-  <nav class='flex justify-between gap-6 px-[1rem]'>
+  <nav class='flex justify-between gap-6 sm:px-[1rem]'>
     <ThemeButton />
     <ul class='flex justify-end gap-6'>
-      {
-        links.map((link) => (
-          <li>
-            <a href={link.url}>{link.label}</a>
-          </li>
-        ))
-      }
+      {links.map((link) => (
+        <li>
+          <a href={link.url}>{link.label}</a>
+        </li>
+      ))}
     </ul>
   </nav>
 </header>
